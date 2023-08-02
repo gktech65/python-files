@@ -1,0 +1,112 @@
+(1)
+# Write a program to count the number of lines in a file 
+f1=open("first.txt","r")
+l=f1.readlines()
+print("The no. of lines =",len(l))
+
+(2)
+# Write a program to count the frequencies of each word from a file 
+f1=open("first.txt","r")
+s=f1.read()
+s1=s.strip(",.")
+l=s1.split()
+f = {}
+for i in l:
+  if (i in f):
+    f[i] += 1
+  else:
+    f[i] = 1
+for key, value in f.items():
+  print (key, value)
+
+(3)
+# Write a program to append a file with the contents of another file  
+f1=open("first.txt",'r')
+f2=open("second.txt",'a')
+l=f1.read()
+f2.write(l)
+f1.close()
+f2.close()
+
+(4)
+# Write a program that counts the number of times the first three letters of the alphabet (A,a,B,b,C,c) occur in a file. Do not distinguish between the lowercase and uppercase letters 
+f1=open("First.txt","r")
+s=f1.read()
+s.lower()
+a=s.count('a')
+b=s.count('b')
+c=s.count('c')
+print("No of times(A,a) is present:",a,"\nNo of times(B,b) is present:",b,"\nNo of times(C,c) is present:",c)
+f1.close()
+
+(5)
+# Write a program to compare two files   
+f1=open("First.txt","r")
+f2=open("Second.txt","r")
+s1=f1.read()
+s2=f2.read()
+if s1==s2:
+  print("They are same.")
+else:
+  print("They are not same.")
+f1.close()
+f2.close()
+
+(6)
+# Develop a python code to read a text file, copy the contents to another file after removing the blank lines. 
+f1=open("first.txt","r")
+f2=open("Second.txt","w")
+lines = f1.readlines()
+f1.seek(0)
+for line in lines:
+  if line.strip():
+    f2.writelines( line )
+f1.close()
+f2.close()
+
+(7)
+# Write a Python program to count the number of lines, words and characters in the input files. 
+f1 = open("first.txt",'r')
+c = f1.read()
+f1.seek(0,0)
+l = f1.readlines()
+f1.seek(0,0)
+w = 0
+for line in f1:
+  d = line.split(" ")
+  w = w + len(d)
+print("No of lines:",len(l),"\nNo of characters:",len(c),"\nNo of words:",w)
+f1.close()
+
+(8)
+# Write a Python program to merge two input files content into a single file
+f1=open("First.txt","r")
+f2=open("Second.txt","r")
+f3=open("Third.txt","a")
+a=f1.read()
+b=f2.read()
+f3.write(a)
+f3.write(b)
+f1.close()
+f2.close()
+f3.close()
+
+(9)
+# Write a program to print the content of a file in the reverse order
+f1=open("First.txt",'r')
+s=f1.read()
+print(s[::-1])
+f1.close()
+
+(10)
+# Write a program to identify palindromes in the input file 
+f1=open("Second.txt","r")
+s=f1.read()
+s1=s.replace(".", " ")
+l=s1.split()
+for i in l:
+  if len(i)>=3:
+    if i==i[::-1]:
+      print(i)
+f1.close()
+
